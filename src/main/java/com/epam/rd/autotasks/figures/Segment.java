@@ -73,8 +73,6 @@ class Segment {
     }
 
     public static double getB(Point start, Point end) {
-        if (end.getX() == start.getX())
-            return end.getX();
         return start.getY() - (end.getY() - start.getY()) / (end.getX() / start.getX() - 1);
     }
 
