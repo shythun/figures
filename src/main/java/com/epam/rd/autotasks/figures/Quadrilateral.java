@@ -1,9 +1,6 @@
 package com.epam.rd.autotasks.figures;
 
-import java.util.Arrays;
-import java.util.Dictionary;
-import java.util.Hashtable;
-import java.util.Map;
+import java.util.*;
 
 class Quadrilateral extends Figure{
 
@@ -38,7 +35,7 @@ class Quadrilateral extends Figure{
 
     @Override
     public String pointsToString() {
-        return a.toString() + b.toString() + c.toString() + d.toString();
+        return "" + a + b + c + d;
     }
 
     @Override

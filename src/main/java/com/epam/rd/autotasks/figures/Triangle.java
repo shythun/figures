@@ -43,20 +43,15 @@ class Triangle extends Figure{
         if (b.getX() == c.getX())
             return bc.length() * abs(a.getX() - b.getX()) / 2;
 
-        if (bc.getStart().getX() == bc.getEnd().getX()) {
-            x = bc.getStart().getX();
-            y = a.getY();
-        } else if (bc.getStart().getY() == bc.getEnd().getY()) {
-            x = a.getX();
-            y = bc.getStart().getY();
-        } else {
-            k1 = Segment.getA(bc.getStart(), bc.getEnd());
-            b1 = Segment.getB(bc.getStart(), bc.getEnd());
-            k2 = -1 / k1;
-            b2 = a.getY() - k2 * a.getX();
-            x = (b2 - b1) / (k1 - k2);
-            y = k1 * x + b1;
-        }
+        if (b.getY() == c.getY())
+            return bc.length() * abs(a.getY() - b.getY()) / 2;
+
+        k1 = Segment.getA(bc.getStart(), bc.getEnd());
+        b1 = Segment.getB(bc.getStart(), bc.getEnd());
+        k2 = -1 / k1;
+        b2 = a.getY() - k2 * a.getX();
+        x = (b2 - b1) / (k1 - k2);
+        y = k1 * x + b1;
 
         Segment h = new Segment(a, new Point(x, y));
 

@@ -18,9 +18,9 @@ class Segment {
 
     public Segment(Point start, Point end) {
 
-        if (start == null) throw new RuntimeException("start == null");
-        if (end == null) throw new RuntimeException("end == null");
-        if (start.getX() == end.getX() && start.getY() == end.getY()) throw new RuntimeException("start == end");
+        if (start == null) throw new IllegalArgumentException("start == null");
+        if (end == null) throw new IllegalArgumentException("end == null");
+        if (start.getX() == end.getX() && start.getY() == end.getY()) throw new IllegalArgumentException("start == end");
         this.start = start;
         this.end = end;
     }
@@ -69,7 +69,7 @@ class Segment {
     }
 
     public static double getA(Point start, Point end) {
-        return (end.getX() - start.getX()) == 0 ? 0 : (end.getY() - start.getY()) / (end.getX() - start.getX());
+        return (end.getY() - start.getY()) / (end.getX() - start.getX());
     }
 
     public static double getB(Point start, Point end) {
